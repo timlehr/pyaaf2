@@ -23,6 +23,7 @@ import math
 from pprint import pprint
 
 import aaf2
+from aaf2.auid import AUID
 
 FFMPEG_EXEC = "ffmpeg"
 FFPROBE_EXEC = "ffprobe"
@@ -359,7 +360,7 @@ def ffmpeg_convert(path,
     return out_files
 
 def create_matte_key_definition(f):
-    opdef = f.create.OperationDef(auid.AUID("0c864774-e428-3b2d-8115-1c736806191a"), 'MatteKey_2')
+    opdef = f.create.OperationDef(AUID("0c864774-e428-3b2d-8115-1c736806191a"), 'MatteKey_2')
     opdef['IsTimeWarp'].value = False
     opdef['OperationCategory'].value = 'OperationCategory_Effect'
     opdef['NumberInputs'].value = 3
